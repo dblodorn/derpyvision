@@ -1,0 +1,8 @@
+[build]
+  Command = "yarn build"
+  Publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
