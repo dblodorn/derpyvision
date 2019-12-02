@@ -6,3 +6,7 @@
   font-family: 'Basis Medium';
   src: url('/fonts/BasisGrotesque-Medium.otf');
 }
+@font-face {
+  font-family: 'PDU';
+  src: url('/fonts/pdu_regular.woff');
+}

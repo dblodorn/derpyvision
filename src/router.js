@@ -11,11 +11,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: () => import(/* webpackChunkName: "HOME" */ './views/Home.vue')
-    },
-    {
-      path: '/privacy',
-      name: 'privacy',
-      component: () => import(/* webpackChunkName: "PRIVACY" */ './views/Privacy.vue')
     }
   ]
 })

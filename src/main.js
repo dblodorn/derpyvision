@@ -13,7 +13,8 @@ Vue.config.productionTip = false
 
 const fonts = [
   'Basis Regular',
-  'Basis Medium'
+  'Basis Medium',
+  'PDU'
 ]
 
 WebFont.load({

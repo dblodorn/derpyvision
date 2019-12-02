@@ -19,6 +19,11 @@ injectGlobal`
     ${_.sansFont};
     font-size: 2rem;
   }
+  .pdu {
+    ${_.pduFont};
+    ${_.strokeType()};
+    font-size: 4rem;
+  }
   ::-webkit-input-placeholder,
   ::-moz-placeholder {
     color: white;
@@ -34,6 +39,6 @@ injectGlobal`
     background: ${colors.white};
   }
   *::-webkit-scrollbar-thumb:hover {
-    background: ${colors.fc[3]};
+    background: ${colors.blue};
   }
 `
