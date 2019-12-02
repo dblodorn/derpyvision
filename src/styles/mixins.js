@@ -1,5 +1,5 @@
 import { css } from 'vue-styled-components'
-import { breakpoints, spacing, fonts } from './theme'
+import { breakpoints, spacing, fonts, colors } from './theme'
 
 // Media Queries
 const media = {
@@ -66,6 +66,13 @@ const mediumFont = css`
   letter-spacing: 1px;
 `
 
+const pduFont = css`
+  font-family: ${fonts.pdu};
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+`
+
 const bigType = css`
   ${mediumFont};
   font-size: 3.5rem;
@@ -119,6 +126,16 @@ const linkInit = css`
     text-decoration: none;
   }
 `
+
+const strokeType = (color, stroke, weight) => {
+  return css`
+    color: ${color || colors.white};
+    -webkit-text-fill-color: ${color || colors.white};
+    -webkit-text-stroke-color: ${stroke || colors.black};
+    -webkit-text-stroke-width: ${weight || 1}px;
+    -webkit-font-smoothing: antialiased;
+ `
+}
 
 // STYLE UTILS
 const buttonInit = css`
@@ -260,5 +277,7 @@ export {
   sansFont,
   textUnderline,
   buttonCircle,
-  mediumFont
+  mediumFont,
+  strokeType,
+  pduFont
 }
