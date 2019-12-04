@@ -4,16 +4,13 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const FetchJsonWebpackPlugin = require('fetch-json-webpack-plugin')
 const common = require('./webpack.common.js')
-const {
-  htmlOptions
-} = require('./build.config.js')
 
 const pathsToClean = [
   './dist'
 ]
 
 const cleanOptions = {
-  exclude: ['_redirects'],
+  exclude: ['_redirects', 'robots.txt'],
   root: process.cwd(),
   verbose: true,
   dry: false
@@ -26,7 +23,7 @@ module.exports = merge(common, {
       cleanOptions
     ),
     new FetchJsonWebpackPlugin({
-      endpoint: htmlOptions.endpoint,
+      endpoint: process.env.VUE_APP_API,
       filename: 'data',
       hash: true,
     }),

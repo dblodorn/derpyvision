@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const htmlOptions = {
   title: process.env.VUE_APP_TITLE,
   description: process.env.VUE_APP_DESCRIPTION,

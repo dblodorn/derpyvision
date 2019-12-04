@@ -20,7 +20,7 @@ const fonts = [
 WebFont.load({
   custom: {
     families: fonts,
-    urls: ['/public/fonts.css']
+    urls: ['/assets/fonts.css']
   },
   active: () => {}
 })

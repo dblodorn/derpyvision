@@ -6,6 +6,7 @@ import bowser from 'bowser'
 import throttle from 'lodash/throttle'
 import mixin from 'lodash/mixin'
 import _ from 'lodash/wrapperLodash'
+import fetchWpOptions from './controllers/fetchWpOptions'
 
 mixin(_, {
   throttle: throttle
@@ -44,16 +45,14 @@ export default new Vuex.Store({
     GET_API_DATA ({ commit }) {
       NProgress.configure({ easing: 'ease', speed: 500 })
       NProgress.start()
-      axios.get(`${process.env.VUE_APP_API}`)
-        .then((response) => {
-          commit('SET_API_DATA', { list: response.data })
+      fetchWpOptions()
+        .then(response => response.json())
+        .then((payload) => {
+          commit('SET_API_DATA', { list: payload })
           setTimeout(() => {
             commit('SET_SITE_LOADED', { bool: true })
-          }, 2000)
+          }, 3000)
           NProgress.done()
-        })
-        .catch((error) => {
-          console.log('Error Fetching Content' + error)
         })
     },
     GET_TOUCH_STATE ({ commit }) {

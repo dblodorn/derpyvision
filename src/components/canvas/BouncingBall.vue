@@ -15,7 +15,7 @@ export default {
       let dx = 4
       let dy = -4
       let img = new Image()
-      img.src = '/public/imgs/derpy-avatar-circle.png'
+      img.src = '/assets/imgs/derpy-avatar-circle.png'
 
       const imgSize = {
         w: 200 / 1.5,
