@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "webpack-dev-server --config=webpack/webpack.dev.js --mode development --env.NODE_ENV --open",
+    "stage": "webpack --progress --config=webpack/webpack.stage.js --mode development --env.NODE_ENV",
+    "build": "webpack --progress --config=webpack/webpack.prod.js --mode production --env.NODE_ENV"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "axios": "^0.19.0",
     "bowser": "^2.4.0",
     "color": "^3.1.2",
-    "core-js": "^2.6.5",
+    "core-js": "^3.4.7",
     "glsl-vue-loader": "^0.5.0",
     "glslCanvas": "^0.1.7",
     "intersection-observer": "^0.7.0",
@@ -20,6 +20,7 @@
     "lodash": "^4.17.11",
     "nprogress": "^0.2.0",
     "popmotion": "^8.7.0",
+    "portal-vue": "^2.1.6",
     "scrollmonitor": "^1.2.4",
     "three": "^0.107.0",
     "vue": "^2.6.10",
@@ -31,19 +32,67 @@
     "vue-touch": "^2.0.0-beta.4",
     "vue-vimeo-player": "^0.0.9",
     "vuex": "^3.0.1",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "yarn": "^1.21.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-destructuring": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@vue/babel-preset-app": "^4.1.1",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.2.1",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.7.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "fetch-json-webpack-plugin": "^1.0.3",
+    "file-loader": "^5.0.2",
     "glslify-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash-webpack-plugin": "^0.11.5",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
     "raw-loader": "^3.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "style-loader": "^1.0.1",
+    "url-loader": "^3.0.0",
+    "vue-loader": "^15.7.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "debug": true,
+          "corejs": 3
+        }
+      ],
+      [
+        "@vue/app",
+        {
+          "useBuiltIns": "entry"
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-transform-destructuring",
+      "lodash"
+    ]
   },
   "eslintConfig": {
     "root": true,

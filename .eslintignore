@@ -1,2 +1,2 @@
 api/*.js
-vue.config.js
+webpack/*.js
