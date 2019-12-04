@@ -1,6 +1,6 @@
 <template>
   <HeaderWrapper>
-    <div class="pdu">DErpYVISION</div>
+    <div class="pdu">{{title}}</div>
   </HeaderWrapper>
 </template>
 
@@ -28,6 +28,11 @@ export default {
   props: [
     'Copy'
   ],
+  data () {
+    return {
+      title: process.env.VUE_APP_TITLE
+    }
+  },
   components: {
     HeaderWrapper
   }
