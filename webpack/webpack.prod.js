@@ -23,7 +23,7 @@ module.exports = merge(common, {
       cleanOptions
     ),
     new FetchJsonWebpackPlugin({
-      endpoint: process.env.VUE_APP_API,
+      endpoint: process.env.APP_API,
       filename: 'data',
       hash: true,
     }),

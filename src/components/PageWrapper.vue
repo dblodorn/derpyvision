@@ -43,13 +43,13 @@ export default {
   },
   metaInfo () {
     const image = () =>
-      this.pageImage ? this.pageImage : `${process.env.VUE_APP_URL}imgs/twitter-card.jpg`
+      this.pageImage ? this.pageImage : `${process.env.APP_URL}imgs/twitter-card.jpg`
 
     const title = () =>
-      this.pageTitle ? `${this.pageTitle} | ${process.env.VUE_APP_TITLE}` : process.env.VUE_APP_TITLE
+      this.pageTitle ? `${this.pageTitle} | ${process.env.APP_TITLE}` : process.env.APP_TITLE
 
     const description = () =>
-      this.pageDescription ? this.pageDescription : process.env.VUE_APP_DESCRIPTION
+      this.pageDescription ? this.pageDescription : process.env.APP_DESCRIPTION
 
     const metaTags = [
       {

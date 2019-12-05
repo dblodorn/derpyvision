@@ -1,13 +1,13 @@
 require('dotenv').config()
 
 const htmlOptions = {
-  title: process.env.VUE_APP_TITLE,
-  description: process.env.VUE_APP_DESCRIPTION,
-  bgcolor: process.env.VUE_APP_COLOR,
-  nprogress_color: process.env.VUE_APP_NPROGRESS,
-  site_url: process.env.VUE_APP_URL,
-  keywords: process.env.VUE_APP_KEYWORDS,
-  endpoint: process.env.VUE_APP_API,
+  title: process.env.APP_TITLE,
+  description: process.env.APP_DESCRIPTION,
+  bgcolor: process.env.APP_COLOR,
+  nprogress_color: process.env.APP_NPROGRESS,
+  site_url: process.env.APP_URL,
+  keywords: process.env.APP_KEYWORDS,
+  endpoint: process.env.APP_API,
   inject: true
 }
 
