@@ -4,6 +4,7 @@
       <BouncingBall/>
     </CanvasWrapper>
     <Header/>
+    <ThreeBg/>
   </PageWrapper>
 </template>
 
@@ -13,7 +14,7 @@ import PageWrapper from '@/components/PageWrapper'
 import CanvasWrapper from '@/components/canvas/CanvasWrapper'
 import BouncingBall from '@/components/canvas/BouncingBall'
 import Header from './Header'
-import threeShaderBg from '@/three/threeShaderBg'
+const ThreeBg = () => import(/* webpackChunkName: "three-bg" */ './home/ThreeBg');
 
 // VUE
 export default {
@@ -21,10 +22,8 @@ export default {
     PageWrapper,
     CanvasWrapper,
     BouncingBall,
-    Header
-  },
-  mounted: () => {
-    threeShaderBg()
+    Header,
+    ThreeBg
   },
   computed: {
     ...mapState([
