@@ -6,7 +6,8 @@ import bowser from 'bowser'
 import throttle from 'lodash/throttle'
 import mixin from 'lodash/mixin'
 import _ from 'lodash/wrapperLodash'
-import fetchWpOptions from './controllers/fetchWpOptions'
+import fetchWpDerpyvision from './controllers/fetchWpDerpyvision'
+import fetchWpDmbk from './controllers/fetchWpDmbk'
 
 mixin(_, {
   throttle: throttle
@@ -19,6 +20,7 @@ let lastScrollTop = 0
 export default new Vuex.Store({
   state: {
     apiData: false,
+    dmbkData: false,
     siteLoaded: false,
     pageHistory: false,
     boings: 0,
@@ -45,13 +47,23 @@ export default new Vuex.Store({
     GET_API_DATA ({ commit }) {
       NProgress.configure({ easing: 'ease', speed: 500 })
       NProgress.start()
-      fetchWpOptions()
+      fetchWpDerpyvision()
         .then(response => response.json())
         .then((payload) => {
           commit('SET_API_DATA', { list: payload })
           setTimeout(() => {
             commit('SET_SITE_LOADED', { bool: true })
           }, 3000)
+          NProgress.done()
+        })
+    },
+    GET_DMBK_DATA ({ commit }) {
+      NProgress.configure({ easing: 'ease', speed: 500 })
+      NProgress.start()
+      fetchWpDmbk()
+        .then(response => response.json())
+        .then((payload) => {
+          commit('SET_DMBK_DATA', { list: payload })
           NProgress.done()
         })
     },
@@ -141,7 +153,12 @@ export default new Vuex.Store({
       state.boings = state.boings + 1
     },
     SET_API_DATA: (state, { list }) => {
+      console.log('DERPY DATA::', list)
       state.apiData = list
+    },
+    SET_DMBK_DATA: (state, { list }) => {
+      console.log('DMBK DATA::', list)
+      state.dmbkData = list
     },
     SET_TOUCH_STATE: (state, { bool }) => {
       state.touchState = bool
