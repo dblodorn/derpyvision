@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const FetchJsonWebpackPlugin = require('fetch-json-webpack-plugin')
 const common = require('./webpack.common.js')
+const endpoints = require('./../endpoints');
 
 const pathsToClean = [
   './dist'
@@ -23,9 +24,7 @@ module.exports = merge(common, {
       cleanOptions
     ),
     new FetchJsonWebpackPlugin({
-      endpoint: process.env.VUE_APP_API,
-      filename: 'data',
-      hash: true,
+      ...endpoints
     }),
     new CopyWebpackPlugin([
       {

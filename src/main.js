@@ -6,7 +6,6 @@ import VueScrollTo from 'vue-scrollto'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import threeShaderBg from '@/three/threeShaderBg'
 import '@/styles/global-styles.js'
 
 Vue.config.productionTip = false
@@ -44,11 +43,11 @@ Vue.use(VueScrollTo, {
 new Vue({
   created () {
     this.$store.dispatch('GET_API_DATA')
+    this.$store.dispatch('GET_DMBK_DATA')
     this.$store.dispatch('GET_TOUCH_STATE')
     this.$store.dispatch('GET_RESIZE_STATE')
     this.$store.dispatch('GET_SCROLL_STATE')
     this.$store.dispatch('GET_USER_AGENT')
-    threeShaderBg()
   },
   router,
   store,

@@ -13,6 +13,7 @@ import PageWrapper from '@/components/PageWrapper'
 import CanvasWrapper from '@/components/canvas/CanvasWrapper'
 import BouncingBall from '@/components/canvas/BouncingBall'
 import Header from './Header'
+import threeShaderBg from '@/three/threeShaderBg'
 
 // VUE
 export default {
@@ -21,6 +22,9 @@ export default {
     CanvasWrapper,
     BouncingBall,
     Header
+  },
+  mounted: () => {
+    threeShaderBg()
   },
   computed: {
     ...mapState([

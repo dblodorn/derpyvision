@@ -13,7 +13,7 @@ import * as t from '@/styles/theme'
 
 const HeaderWrapper = styled.header`
   overflow: hidden;
-  height: 10rem;
+  height: 8rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ export default {
   ],
   data () {
     return {
-      title: process.env.VUE_APP_TITLE
+      title: process.env.APP_TITLE
     }
   },
   components: {
