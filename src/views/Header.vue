@@ -1,7 +1,7 @@
 <template>
   <HeaderWrapper>
     <div class="pdu">{{title}}</div>
-    <data>{{apiData.intro}}</data>
+    <Info v-if="info"/>
   </HeaderWrapper>
 </template>
 
@@ -10,6 +10,7 @@ import { mapState } from 'vuex'
 import styled from 'vue-styled-components'
 // import * as _ from '@/styles/mixins'
 import * as t from '@/styles/theme'
+import Info from './Info'
 
 const HeaderWrapper = styled.header`
   overflow: hidden;
@@ -20,8 +21,8 @@ const HeaderWrapper = styled.header`
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 9000;
-  border-top: 2px solid ${t.colors.black};
+  z-index: 900;
+  border-top: 2px solid ${t.colors.white};
   background-color: ${t.colors.beige};
   padding: ${t.spacing.single_pad};
   data {
@@ -35,11 +36,13 @@ export default {
   ],
   data () {
     return {
-      title: process.env.APP_TITLE
+      title: process.env.APP_TITLE,
+      info: false
     }
   },
   components: {
-    HeaderWrapper
+    HeaderWrapper,
+    Info
   },
   computed: {
     ...mapState([

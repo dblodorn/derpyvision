@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <portal-target name="info"/>
     <transition
       :name="transitionName"
       mode="out-in"

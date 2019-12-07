@@ -18,8 +18,8 @@ export default {
       img.src = '/assets/imgs/derpy-avatar-circle.png'
 
       const imgSize = {
-        w: 200 / 1.5,
-        h: 200 / 1.5
+        w: 150 / 1.5,
+        h: 150 / 1.5
       }
 
       const drawBall = () => {

@@ -18,7 +18,7 @@ const MarqueeWrapper = styled.div`
   align-items: center;
   position: relative;
   span {
-    ${_.sansFont};
+    ${_.mabryBold};
     font-size: 2.75rem;
     text-transform: uppercase;
   }

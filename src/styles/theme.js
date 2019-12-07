@@ -32,8 +32,9 @@ const colors = {
 }
 
 const fonts = {
-  basis_regular: "'Basis Regular', Arial, system-ui, sans-serif",
-  basis_medium: "'Basis Medium', Arial, system-ui, sans-serif",
+  mabry_regular: "'Mabry Regular', Arial, system-ui, sans-serif",
+  mabry_medium: "'Mabry Medium', Arial, system-ui, sans-serif",
+  mabry_bold: "'Mabry Medium', Arial, system-ui, sans-serif",
   pdu: "'PDU', Arial, system-ui, sans-serif"
 }
 

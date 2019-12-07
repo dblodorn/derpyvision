@@ -17,7 +17,7 @@ const CanvasWrapper = styled.div`
   top: 0;
   left: 0;
   display: block;
-  z-index: 10000;
+  z-index: 1000;
   pointer-events: none;
 `
 

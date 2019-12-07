@@ -55,15 +55,19 @@ const mainPadding = css`
 `
 
 // TYPOGRAPHY
-const sansFont = css`
-  font-family: ${fonts.basis_regular};
+const mabryRegular = css`
+  font-family: ${fonts.mabry_regular};
   font-weight: 300;
 `
 
-const mediumFont = css`
-  font-family: ${fonts.basis_medium};
-  font-weight: 600;
-  letter-spacing: 1px;
+const mabryMedium = css`
+  font-family: ${fonts.mabry_medium};
+  font-weight: 300;
+`
+
+const mabryBold = css`
+  font-family: ${fonts.mabry_medium};
+  font-weight: 300;
 `
 
 const pduFont = css`
@@ -74,41 +78,40 @@ const pduFont = css`
 `
 
 const bigType = css`
-  ${mediumFont};
+  ${pduFont};
   font-size: 3.5rem;
   line-height: 1;
   text-transform: uppercase;
 `
 
-const mediumType = css`
-  ${sansFont};
+const boldType = css`
+  ${mabryBold};
   line-height: 1;
-  font-size: 1.45rem;
-  ${media.tablet`
-    font-size: 1.85rem;
-  `}
-  ${media.desktop`
-    font-size: 2rem;
-  `}
+  font-size: 2rem;
+`
+
+const mediumType = css`
+  ${mabryMedium};
+  line-height: 1;
+  font-size: 2rem;
 `
 
 const bodyType = css`
-  ${sansFont};
-  font-size: 1.8rem;
+  ${mabryBold};
+  font-size: 3.75rem;
   line-height: 1.35;
-  ${media.medium`
-    font-size: 2rem;
-  `}
+  letter-spacing: 1px;
+  text-transform: uppercase;
 `
 
 const smallType = css`
-  ${sansFont};
+  ${mabryRegular};
   font-size: 1.4rem;
   line-height: 1.25;
 `
 
 const microType = css`
-  ${sansFont};
+  ${mabryRegular};
   font-size: 1.125rem;
   line-height: 1.25;
 `
@@ -251,13 +254,31 @@ const buttonCircle = css`
   }
 `
 
+const overflowScrollY = css`
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+`
+
+const menuType = css`
+  ${pduFont};
+  ${strokeType()};
+  font-size: 4rem;
+`
+
 export {
   media,
   maxWidth,
   mainPadding,
   absoluteCentered,
   absoluteTopFull,
+  strokeType,
+  pduFont,
+  mabryBold,
+  mabryMedium,
+  mabryRegular,
   bigType,
+  boldType,
   mediumType,
   bodyType,
   smallType,
@@ -274,10 +295,8 @@ export {
   flexCenteredAll,
   fullBg,
   linkInit,
-  sansFont,
   textUnderline,
   buttonCircle,
-  mediumFont,
-  strokeType,
-  pduFont
+  overflowScrollY,
+  menuType
 }

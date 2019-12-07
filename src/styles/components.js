@@ -90,6 +90,7 @@ const SocialLink = styled('a', props)`
 const StyledMarkup = styled.div`
   width: 100%;
   max-width: 90rem;
+  padding: 4rem;
   margin: 0 auto;
   h1 {
     ${_.bigType};
@@ -108,7 +109,7 @@ const StyledMarkup = styled.div`
   }
   p,
   li {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
     color: ${colors.black};
     &:last-child {
       margin-bottom: 0;
@@ -118,6 +119,9 @@ const StyledMarkup = styled.div`
     display: inline!important;
     color: ${colors.black};
     text-decoration: underline;
+    &:hover {
+      color: ${colors.blue}!important;
+    }
   }
   b {
     font-weight: 700!important;

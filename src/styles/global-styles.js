@@ -10,13 +10,13 @@ injectGlobal`
     opacity: 0;
   }
   body {
-    ${_.sansFont};
+    ${_.mabryRegular};
   }
   button {
     ${_.buttonInit};
   }
   h1 {
-    ${_.sansFont};
+    ${_.mabryBold};
     font-size: 2rem;
   }
   .pdu {

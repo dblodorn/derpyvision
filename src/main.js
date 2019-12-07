@@ -3,6 +3,7 @@ import Vue from 'vue'
 import WebFont from 'webfontloader'
 import VueMeta from 'vue-meta'
 import VueScrollTo from 'vue-scrollto'
+import PortalVue from 'portal-vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -23,7 +24,7 @@ WebFont.load({
   },
   active: () => {}
 })
-
+Vue.use(PortalVue)
 Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 })

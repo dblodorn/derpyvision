@@ -1,10 +1,14 @@
 @font-face {
-  font-family: 'Basis Regular';
-  src: url('fonts/BasisGrotesque-Regular.otf');
+  font-family: 'Mabry Regular';
+  src: url('fonts/mabry-regular.woff');
 }
 @font-face {
-  font-family: 'Basis Medium';
-  src: url('fonts/BasisGrotesque-Medium.otf');
+  font-family: 'Mabry Medium';
+  src: url('fonts/mabry-medium.woff');
+}
+@font-face {
+  font-family: 'Mabry Bold';
+  src: url('fonts/mabry-bold.woff');
 }
 @font-face {
   font-family: 'PDU';
