@@ -23,7 +23,7 @@
     "popmotion": "^8.7.0",
     "portal-vue": "^2.1.6",
     "scrollmonitor": "^1.2.4",
-    "three": "^0.107.0",
+    "three": "^0.125.0",
     "vue": "^2.6.10",
     "vue-marquee-text-component": "^1.1.1",
     "vue-meta": "^1.6.0",
