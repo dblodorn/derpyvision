@@ -38,20 +38,20 @@ export default {
     }
 
     void main() {
-      vec3 color1 = vec3(234.0/255.0,100.0/255.0,227.0/255.0);
-      vec3 color2 = vec3(97.0/255.0,100.0/255.0,225.0/255.0);
+      vec3 color1 = vec3(234.0/255.0,50.0/255.0,227.0/255.0);
+      vec3 color2 = vec3(97.0/255.0,150.0/255.0,225.0/255.0);
       vec3 color3 = vec3(242.0/255.0,87.0/255.0,87.0/255.0);
       vec3 color4 = vec3(242.0/255.0,232.0/255.0,99.0/255.0);
       vec3 color5 = vec3(242.0/255.0,205.0/255.0,96.0/255.0);
-      vec3 color6 = vec3((255.0/2.0)/255.0,(255.0/2.0)/255.0,(255.0/2.0) / 255.0);
+      vec3 color6 = vec3((255.0/1.5)/255.0,(255.0/2.0)/255.0,(255.0/2.0) / 255.0);
       vec2 st = gl_FragCoord.xy/u_resolution.xy;
       st.x *= u_resolution.x/u_resolution.y;
       vec3 color = vec3(0.0);
-      vec2 pos = vec2(st*3.);
-      float DF = 0.0;
+      vec2 pos = vec2(st*4.);
+      float DF = 0.1;
       // Add a random position
-      float a = 0.0;
-      vec2 vel = vec2(u_time*.1);
+      float a = 0.1;
+      vec2 vel = vec2(u_time*.5);
       DF += snoise(pos+vel)*.25+.25;
       // Add a random position
       a = snoise(pos*vec2(cos(u_time*0.15),sin(u_time*0.1))*0.1)*3.1415;
@@ -60,7 +60,7 @@ export default {
       float r = (smoothstep(0.0,1.0,fract(DF)));
       if(r >= 0.0 && r < 0.35){
         color = color1;
-      } else if(r >= 0.15 && r < 0.45){
+      } else if(r >= 0.15 && r < 0.145){
         color = color2;
       } else if(r >= 0.45 && r < 1.55){
         color = color3;
@@ -71,7 +71,7 @@ export default {
       } else {
         color = color6;
       }
-      gl_FragColor = vec4(color,1.0);
+      gl_FragColor = vec4(color,1.4);
     }
   `
 }

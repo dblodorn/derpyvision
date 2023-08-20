@@ -2,11 +2,7 @@
 import store from './../store'
 import * as THREE from 'three'
 import shaderBlob from './shaders/shaderBlob'
-import shaderVapor from './shaders/shaderVapor'
-import shaderSimple from './shaders/shaderSimple'
-import shaderPipe from './shaders/shaderPipe'
-import randomNumMinMax from '@/scripts/randomNumMinMax'
-import { timeline } from '../../node_modules/popmotion';
+import shaderBlobTwo from './shaders/shaderBlobTwo'
 
 class MathUtils {
   lerp(a, b, n) {
@@ -16,9 +12,7 @@ class MathUtils {
 
 const shaderArray = [
   shaderBlob,
-  shaderVapor,
-  shaderSimple,
-  shaderPipe
+  shaderBlobTwo,
 ]
 
 class WebGL {

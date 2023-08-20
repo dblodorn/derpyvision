@@ -66,7 +66,7 @@ export default {
     float d = distance(pos, cen);
     float a = map(d, 0.0, md, 0.0, TWO_PI * 1.0);
   
-    float col = circle(pos -.15, cen - 0.15, 0.1, 0.1);
+    float col = circle(pos -.20, cen - 0.15, 0.1, 0.1);
   
     float inner = map(sin(time / 2.0), -1.0, 1.0, 1.0, 2.0);
     // float inner = 0.9;
@@ -93,7 +93,7 @@ export default {
       sin(spiral - time) - col
     );
     vec3 mix2 = mix(
-      vec3(0.8275, 0.8863, 0.8196),
+      vec3(0.8275, 0.8863, 0.5),
       vec3(0.6, 0.6431, 0.8392),
       sin(arms + spiral) + col
     );
@@ -103,7 +103,7 @@ export default {
       col
     );
   
-    gl_FragColor = vec4(color, 4.0);
+    gl_FragColor = vec4(color, 2.0);
   }
   `
 }

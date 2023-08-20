@@ -1,8 +1,8 @@
 /* eslint-disable */
 import store from './../store'
 import * as THREE from 'three'
-import shaderSimple from './shaders/shaderSimple'
-import shaderPipe from './shaders/shaderPipe'
+import shaderBlob from './shaders/shaderBlob'
+import shaderBlobTwo from './shaders/shaderBlobTwo'
 
 class MathUtils {
   lerp(a, b, n) {
@@ -11,8 +11,8 @@ class MathUtils {
 }
 
 const shaderArray = [
-  shaderSimple,
-  shaderPipe
+  shaderBlob,
+  shaderBlobTwo,
 ]
 
 class WebGL {

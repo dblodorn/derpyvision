@@ -1,39 +1,79 @@
 <script>
 /* eslint-disable */
 import { mapState, mapActions } from 'vuex'
+// import * as Tone from 'tone'
 
 export default {
   inject: ['provider'],
-  render () {
+  props: {
+    image: {
+      type: String,
+      default: '/assets/imgs/derpy-avatar-circle.png'
+    },
+    y: {
+      type: Number,
+      default: 94
+    },
+    x: {
+      type: Number,
+      default: 0
+    },
+    dx: {
+      type: Number,
+      default: 4
+    },
+    dy: {
+      type: Number,
+      default: -4
+    },
+    useBoingSet: {
+      type: Boolean,
+      default: false
+    }
+  },
+  render() {
     if (!this.provider.context) return
-      const dpi = window.devicePixelRatio
-      const canvas = this.provider.context.canvas
       const ctx = this.provider.context
-      const ballRadius = 20
-      let x = 0
-      let y = 94
-      let dx = 4
-      let dy = -4
+      let x = this.x
+      let y = this.y
+      let dx = this.dx
+      let dy = this.dy
       let img = new Image()
-      img.src = '/assets/imgs/derpy-avatar-circle.png'
+      img.src = this.image
+      console.log(this.image, this.x, this.y, this.dx, this.dy)
+      // const synth = new Tone.Synth().toDestination();
+      // const now = Tone.now()
 
       const imgSize = {
-        w: 200 / 1.5,
-        h: 200 / 1.5
+        w: 100,
+        h: 100
       }
 
-      const drawBall = () => {
-        ctx.drawImage(img, x, y, imgSize.w, imgSize.h)
+    const drawBall = () => {
+        ctx.save()
+        ctx.beginPath()
+        ctx.arc(x, y, (imgSize.w / 2), 0, Math.PI * 2, false)
+        ctx.clip()
+        ctx.drawImage(img, (x - imgSize.w / 2), (y - imgSize.w / 2), imgSize.w, imgSize.h)
+        ctx.restore()
+      }
+
+      const triggerSynth = () => {
+        console.log('synth') 
       }
 
       const draw = () => {
         ctx.clearRect(0, 0, this.provider.context.canvas.clientWidth, this.provider.context.canvas.clientHeight)
         drawBall()
-        if(x + dx > this.provider.context.canvas.clientWidth-imgSize.w || x + dx < -5) {
+        if(x + dx > this.provider.context.canvas.clientWidth-(imgSize.w / 2) || x + dx < 0) {
+          triggerSynth()
           dx = -dx
-          this.setBoing()
+          if (this.useBoingSet) {
+            console.log(this.boings)
+            this.setBoing()
+          }
         }
-        if(y + dy > this.provider.context.canvas.clientHeight-imgSize.h || y + dy < -5) {
+        if(y + dy > this.provider.context.canvas.clientHeight-(imgSize.h / 2) || y + dy < 0) {
           dy = -dy
         }
         x += dx
