@@ -49,7 +49,7 @@ export default {
         h: 100
       }
 
-    const drawBall = () => {
+      const drawBall = () => {
         ctx.save()
         ctx.beginPath()
         ctx.arc(x, y, (imgSize.w / 2), 0, Math.PI * 2, false)

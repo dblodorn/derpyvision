@@ -42,8 +42,8 @@ Vue.use(VueScrollTo, {
 
 new Vue({
   created () {
-    this.$store.dispatch('GET_API_DATA')
-    this.$store.dispatch('GET_DMBK_DATA')
+    // this.$store.dispatch('GET_API_DATA')
+    // this.$store.dispatch('GET_DMBK_DATA')
     this.$store.dispatch('GET_TOUCH_STATE')
     this.$store.dispatch('GET_RESIZE_STATE')
     this.$store.dispatch('GET_SCROLL_STATE')
